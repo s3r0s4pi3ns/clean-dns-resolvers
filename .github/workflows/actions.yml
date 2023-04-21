@@ -20,12 +20,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           git clone https://github.com/vortexau/dnsvalidator.git
-          cd dns-validator
+          cd dnsvalidator
           python setup.py install 
           cd ..
 
       - name: run dsnvalidator
-        run: dnsvalidator -tL public-dns-list.txt -threads 25 -timeout 15 --silent -o resolvers.txt
+        run: /usr/local/bin/dnsvalidator -tL public-dns-list.txt -threads 25 -timeout 15 --silent -o resolvers.txt
 
       - name: commit files
         run: |
