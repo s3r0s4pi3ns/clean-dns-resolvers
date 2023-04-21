@@ -1,8 +1,8 @@
-name: run main.py
+name: dns validation
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # Every 12 hours
+    - cron: "0 0,12 * * *" # At 12 AM and 12 PM
 
 jobs:
   build:
