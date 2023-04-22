@@ -25,7 +25,7 @@ jobs:
           cd ..
 
       - name: run dsnvalidator
-        run: dnsvalidator -tL public-dns-list.txt -threads 25 -timeout 15 --silent -o resolvers.txt
+        run: dnsvalidator -tL resolvers.txt -threads 25 -timeout 15 --silent -o resolvers.txt
 
       - name: commit files
         run: |
