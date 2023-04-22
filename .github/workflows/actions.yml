@@ -1,9 +1,8 @@
-name: DNS-VALIDATION
+name: dns-validation-task
 
 on:
-  push
-  # schedule:
-  #   - cron: "0 0,12 * * *" # At 12 AM and 12 PM
+  schedule:
+    - cron: "0 0,12 * * *" # At 12 AM and 12 PM
 
 jobs:
   build:
