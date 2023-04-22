@@ -1,8 +1,9 @@
-name: dns validation
+name: DNS-VALIDATION
 
 on:
-  schedule:
-    - cron: "0 0,12 * * *" # At 12 AM and 12 PM
+  push
+  # schedule:
+  #   - cron: "0 0,12 * * *" # At 12 AM and 12 PM
 
 jobs:
   build:
@@ -25,7 +26,7 @@ jobs:
           cd ..
 
       - name: run dsnvalidator
-        run: /usr/local/bin/dnsvalidator -tL public-dns-list.txt -threads 25 -timeout 15 --silent -o resolvers.txt
+        run: dnsvalidator -tL public-dns-list.txt -threads 25 -timeout 15 --silent -o resolvers.txt
 
       - name: commit files
         run: |
